@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AstroWeather</string>
+    <string name="humedity">Humidity: </string>
+    <string name="pressure">Pressure: </string>
+    <string name="sunset">Sunset: </string>
+    <string name="sunrise">Sunrise: </string>
+    <string name="visibility">Visibility: </string>
+    <string name="wind">Wind: </string>
+</resources>
