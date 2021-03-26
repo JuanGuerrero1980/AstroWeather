@@ -13,6 +13,7 @@ import com.jg.astroweather.data.repositories.CityRepositoryImpl
 import com.jg.astroweather.databinding.FragmentCitiesListBinding
 import com.jg.astroweather.domain.entities.City
 import com.jg.astroweather.presentation.BaseFragment
+import com.jg.astroweather.presentation.utils.navigateSafe
 import kotlinx.coroutines.flow.collect
 
 class CitiesListFragment: BaseFragment() {
@@ -58,7 +59,7 @@ class CitiesListFragment: BaseFragment() {
 
     private fun navigateToCityWeather(city: City) {
         val direction = CitiesListFragmentDirections.actionCitiesListFragmentToWeatherFragment(city.id)
-        findNavController().navigate(direction)
+        navigateSafe(direction)
     }
 
     private fun citiesListItemClicked(city: City){
@@ -74,11 +75,11 @@ class CitiesListFragment: BaseFragment() {
     }
 
     private fun displayError(message: String){
-
+        showErrorMessage(message)
     }
 
     private fun navigateToLocationWeather(){
         val direction = CitiesListFragmentDirections.actionCitiesListFragmentToWeatherFragment(0)
-        findNavController().navigate(direction)
+        navigateSafe(direction)
     }
 }
